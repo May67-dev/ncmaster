@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NcMaster - Tutoriales y Bots</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-section">
+                <img src="logo.png" alt="NcMaster Logo" class="logo">
+                <span class="brand">NcMaster</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#tutoriales">Tutoriales</a></li>
+                <li><a href="#bots">Bots</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <img src="logo.png" alt="NcMaster" class="hero-logo">
+            <h1>NcMaster</h1>
+            <p>Tutoriales y Bots para Gamers</p>
+            <button class="cta-button" onclick="document.getElementById('tutoriales').scrollIntoView({behavior: 'smooth'})">
+                Explorar Tutoriales
+            </button>
+        </div>
+    </section>
+
+    <!-- Buscador -->
+    <section class="search-section">
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Busca tutoriales, bots, juegos...">
+            <div id="searchResults" class="search-results hidden"></div>
+        </div>
+    </section>
+
+    <!-- Sección de Tutoriales -->
+    <section id="tutoriales" class="tutoriales-section">
+        <h2>Tutoriales</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterTutorials('todos')">Todos</button>
+            <button class="filter-btn" onclick="filterTutorials('minecraft')">Minecraft</button>
+            <button class="filter-btn" onclick="filterTutorials('valorant')">Valorant</button>
+            <button class="filter-btn" onclick="filterTutorials('fortnite')">Fortnite</button>
+            <button class="filter-btn" onclick="filterTutorials('roblox')">Roblox</button>
+        </div>
+        <div class="tutoriales-grid" id="tutorialesGrid">
+            <!-- Los tutoriales se cargarán aquí -->
+        </div>
+    </section>
+
+    <!-- Sección de Bots -->
+    <section id="bots" class="bots-section">
+        <h2>Bots Disponibles</h2>
+        <div class="bots-grid" id="botsGrid">
+            <!-- Los bots se cargarán aquí -->
+        </div>
+    </section>
+
+    <!-- Modal para ver tutorial completo -->
+    <div id="tutorialModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeTutorialModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <div id="modalContent"></div>
+            <div class="comments-section">
+                <h3>Comentarios</h3>
+                <div id="commentsList" class="comments-list"></div>
+                <div class="comment-form">
+                    <input type="text" id="commentName" placeholder="Tu nombre" class="comment-input">
+                    <textarea id="commentText" placeholder="Tu comentario..." class="comment-input"></textarea>
+                    <button onclick="addComment()" class="comment-btn">Enviar Comentario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto-section">
+        <h2>Contacto</h2>
+        <form class="contact-form" onsubmit="handleContactSubmit(event)">
+            <input type="text" placeholder="Tu nombre" required class="form-input">
+            <input type="email" placeholder="Tu email" required class="form-input">
+            <textarea placeholder="Tu mensaje..." required class="form-input"></textarea>
+            <button type="submit" class="submit-btn">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 NcMaster. Todos los derechos reservados.</p>
+        <p>Tutoriales y Bots para Gamers</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
