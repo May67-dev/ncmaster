@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NcMaster - Tutoriales y Bots</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NcMaster - Tutoriales y Bots para Gamers</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="logo.png" type="image/png">
 </head>
@@ -15,11 +15,12 @@
                 <img src="logo.png" alt="NcMaster Logo" class="logo">
                 <span class="brand">NcMaster</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#tutoriales">Tutoriales</a></li>
-                <li><a href="#bots">Bots</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio" onclick="closeMenu()">Inicio</a></li>
+                <li><a href="#tutoriales" onclick="closeMenu()">Tutoriales</a></li>
+                <li><a href="#bots" onclick="closeMenu()">Bots</a></li>
+                <li><a href="#contacto" onclick="closeMenu()">Contacto</a></li>
             </ul>
         </div>
     </nav>
@@ -29,7 +30,7 @@
         <div class="hero-content">
             <img src="logo.png" alt="NcMaster" class="hero-logo">
             <h1>NcMaster</h1>
-            <p>Tutoriales y Bots para Gamers</p>
+            <p>Tutoriales Completos y Bots para Gamers</p>
             <button class="cta-button" onclick="document.getElementById('tutoriales').scrollIntoView({behavior: 'smooth'})">
                 Explorar Tutoriales
             </button>
@@ -46,7 +47,7 @@
 
     <!-- Sección de Tutoriales -->
     <section id="tutoriales" class="tutoriales-section">
-        <h2>Tutoriales</h2>
+        <h2>Tutoriales Completos</h2>
         <div class="filter-buttons">
             <button class="filter-btn active" onclick="filterTutorials('todos')">Todos</button>
             <button class="filter-btn" onclick="filterTutorials('minecraft')">Minecraft</button>
@@ -73,9 +74,9 @@
             <span class="close" onclick="closeTutorialModal()">&times;</span>
             <h2 id="modalTitle"></h2>
             <p id="modalDescription"></p>
-            <div id="modalContent"></div>
+            <div id="modalContent" class="tutorial-full-content"></div>
             <div class="comments-section">
-                <h3>Comentarios</h3>
+                <h3>Comentarios (Opcional)</h3>
                 <div id="commentsList" class="comments-list"></div>
                 <div class="comment-form">
                     <input type="text" id="commentName" placeholder="Tu nombre" class="comment-input">
